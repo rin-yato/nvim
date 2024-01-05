@@ -7,8 +7,12 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Write and quit like a monster
-vim.keymap.set("n", "<Leader>w", ":w<CR>")
-vim.keymap.set("n", "<Leader>q", ":q<CR>")
+vim.keymap.set("n", "<Leader>w", function()
+	vim.cmd("w")
+end)
+vim.keymap.set("n", "<Leader>q", function()
+	vim.cmd("q")
+end)
 
 -- Exit insert mode
 vim.keymap.set("i", "jj", "<Esc>")
@@ -28,10 +32,6 @@ vim.keymap.set("n", "<S-Tab>", "<C-w>W")
 
 -- Make window only window
 vim.keymap.set("n", "<Leader>O", "<C-w>o")
-
--- Disable ctrl-f/b scrolling (ctrl-d/u all the way 🤘)
-vim.keymap.set("n", "<C-f>", "<Nop>")
-vim.keymap.set("n", "<C-b>", "<Nop>")
 
 -- Vertical split
 vim.keymap.set("n", "<Leader>v", vim.cmd.vsplit, { silent = true })
@@ -64,18 +64,12 @@ vim.keymap.set("v", "<C-j>", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "<C-k>", ":m '<-2<CR>gv=gv")
 
 -- Quickly append semicolon or comma
-vim.keymap.set("i", ";;", "<Esc>A;<Esc>")
-vim.keymap.set("i", ",,", "<Esc>A,<Esc>")
+vim.keymap.set({ "i", "n" }, ";;", "<Esc>A;<Esc>")
+vim.keymap.set({ "i", "n" }, ",,", "<Esc>A,<Esc>")
 
 -- Keep visual selection when indenting
 vim.keymap.set("x", ">", ">gv")
 vim.keymap.set("x", "<", "<gv")
-
--- Visual paste without losing what is in register
--- This first mapping doesn't work because vim-pasta hijacks it
--- Keep an eye on this... https://github.com/sickill/vim-pasta/pull/18
--- vnoremap p "0p
-vim.keymap.set("v", "<leader>p", '"0p')
 
 -- Clear search highlighting
 vim.keymap.set("n", "<Leader>.", vim.cmd.nohlsearch, { silent = true })
@@ -91,3 +85,9 @@ vim.keymap.set("n", "<Leader><Leader>o", ":!open $PWD<CR><CR>", { silent = true 
 
 -- Inspect treesitter highlight captures under cursor
 vim.keymap.set("n", "<Leader><Leader>s", vim.cmd.TSHighlightCapturesUnderCursor)
+
+-- Move between open splits
+vim.keymap.set("n", "H", "<C-w>h")
+vim.keymap.set("n", "J", "<C-w>j")
+vim.keymap.set("n", "K", "<C-w>k")
+vim.keymap.set("n", "L", "<C-w>l")

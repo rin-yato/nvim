@@ -3,7 +3,11 @@
 --------------------------------------------------------------------------------
 
 vim.opt.backspace = { "indent", "eol", "start" }
+vim.opt.hidden = true
 vim.opt.number = true
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.confirm = true
 vim.opt.relativenumber = true
 vim.opt.cursorline = false
 vim.opt.showmode = false
