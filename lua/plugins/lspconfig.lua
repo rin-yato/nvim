@@ -69,6 +69,12 @@ return {
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 		end
 
+		-- configure biome
+		lspconfig["biome"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
 		-- configure html server
 		lspconfig["html"].setup({
 			capabilities = capabilities,
@@ -139,6 +145,17 @@ return {
 							[vim.fn.expand("$VIMRUNTIME/lua")] = true,
 							[vim.fn.stdpath("config") .. "/lua"] = true,
 						},
+					},
+				},
+			},
+		})
+
+		-- configure json server
+		lspconfig.jsonls.setup({
+			settings = {
+				json = {
+					format = {
+						enable = true,
 					},
 				},
 			},

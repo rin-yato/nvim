@@ -11,6 +11,7 @@ end
 -- If not a simple one-liner, maybe extract to plugins folder; Otherwise just throw in here 💥
 return {
 	"tpope/vim-repeat", -- Better `.` repeat
+	"tpope/vim-commentary", -- Code commenting
 	"PeterRincker/vim-searchlight", -- Improved search match highlighting
 	"jesseleite/vim-noh", -- Auto-clear search highlighting
 	s("windwp/nvim-autopairs"), -- Auto-pair closing brackets, quotes, etc.
