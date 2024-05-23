@@ -17,7 +17,6 @@ return {
 
 		require("lualine").setup({
 			options = {
-				-- theme = "poimandres",
 				icons_enabled = false,
 				filetype = { colored = true },
 				component_separators = { left = "", right = "" },

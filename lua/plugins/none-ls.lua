@@ -36,23 +36,26 @@ return {
 				formatting.biome.with({
 					condition = function(utils)
 						-- only enable if root doesn't have .prettierrc
-						return not utils.root_has_file({
-							".prettierrc",
-							".prettierrc.json",
-							".prettierrc.yaml",
-							".prettierrc.yml",
-							".prettierrc.js",
-							".prettierrc.cjs",
-							".prettierrc.mjs",
-							".prettierrc.toml",
-							"prettier.config.js",
-							"prettier.config.cjs",
-							"prettier.config.mjs",
-							"prettier.config.toml",
-							".eslintrc.cjs",
-							".eslintrc",
-							"eslint.config.js",
-							"eslint.config.mjs",
+						-- return not utils.root_has_file({
+						-- 	".prettierrc",
+						-- 	".prettierrc.json",
+						-- 	".prettierrc.yaml",
+						-- 	".prettierrc.yml",
+						-- 	".prettierrc.js",
+						-- 	".prettierrc.cjs",
+						-- 	".prettierrc.mjs",
+						-- 	".prettierrc.toml",
+						-- 	"prettier.config.js",
+						-- 	"prettier.config.cjs",
+						-- 	"prettier.config.mjs",
+						-- 	"prettier.config.toml",
+						-- 	".eslintrc.cjs",
+						-- 	".eslintrc",
+						-- 	"eslint.config.js",
+						-- 	"eslint.config.mjs",
+						-- })
+						return utils.root_has_file({
+							"biome.json",
 						})
 					end,
 
@@ -65,27 +68,31 @@ return {
 						"$FILENAME",
 					},
 				}),
+
 				formatting.prettier.with({
 					extra_filetypes = { "svelte" },
 					condition = function(utils)
-						return utils.root_has_file({
-							".prettierrc",
-							".prettierrc.json",
-							".prettierrc.yaml",
-							".prettierrc.yml",
-							".prettierrc.js",
-							".prettierrc.cjs",
-							".prettierrc.mjs",
-							".prettierrc.toml",
-							"prettier.config.js",
-							"prettier.config.cjs",
-							"prettier.config.mjs",
-							"prettier.config.toml",
-						}) -- only enable if root has .prettierrc
+						return not utils.root_has_file({
+							"biome.json",
+						})
+						-- return utils.root_has_file({
+						-- 	".prettierrc",
+						-- 	".prettierrc.json",
+						-- 	".prettierrc.yaml",
+						-- 	".prettierrc.yml",
+						-- 	".prettierrc.js",
+						-- 	".prettierrc.cjs",
+						-- 	".prettierrc.mjs",
+						-- 	".prettierrc.toml",
+						-- 	"prettier.config.js",
+						-- 	"prettier.config.cjs",
+						-- 	"prettier.config.mjs",
+						-- 	"prettier.config.toml",
+						-- }) -- only enable if root has .prettierrc
 					end,
 				}), -- js/ts formatter
 				formatting.stylua, -- lua formatter
-				-- diagnostics['eslint_d'].with({ -- js/ts linter
+				-- diagnostics["eslint_d"].with({ -- js/ts linter
 				-- 	condition = function(utils)
 				-- 		return utils.root_has_file({
 				-- 			".eslintrc.js",

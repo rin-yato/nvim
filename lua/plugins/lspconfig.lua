@@ -116,12 +116,6 @@ return {
 			end,
 		})
 
-		-- configure prisma orm server
-		lspconfig["prismals"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
-
 		-- configure emmet language server
 		lspconfig["emmet_language_server"].setup({
 			capabilities = capabilities,
@@ -159,6 +153,36 @@ return {
 					},
 				},
 			},
+		})
+
+		-- configure c server
+		lspconfig.clangd.setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
+		-- configure golang server
+		lspconfig.gopls.setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
+		-- configure zig server
+		lspconfig.zls.setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
+		-- configure rust server
+		lspconfig.rust_analyzer.setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
+		-- configure gleam server
+		lspconfig.gleam.setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
 		})
 	end,
 }
