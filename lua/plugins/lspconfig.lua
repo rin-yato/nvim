@@ -69,12 +69,6 @@ return {
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 		end
 
-		-- configure biome
-		lspconfig["biome"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
-
 		-- configure html server
 		lspconfig["html"].setup({
 			capabilities = capabilities,
@@ -179,8 +173,8 @@ return {
 			on_attach = on_attach,
 		})
 
-		-- configure gleam server
-		lspconfig.gleam.setup({
+		-- configure biome server
+		lspconfig.biome.setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})

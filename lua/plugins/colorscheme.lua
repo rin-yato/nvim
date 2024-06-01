@@ -1,7 +1,7 @@
 return {
 	{
 		"projekt0n/github-nvim-theme",
-		lazy = false, -- make sure we load this during startup if it is your main colorscheme
+		lazy = false,  -- make sure we load this during startup if it is your main colorscheme
 		priority = 1000, -- make sure to load this before all the other start plugins
 		config = function()
 			require("github-theme").setup({})
@@ -9,6 +9,16 @@ return {
 			vim.cmd("colorscheme github_light")
 		end,
 	},
+
+	{
+		"datsfilipe/vesper.nvim",
+		config = function()
+			require('vesper').setup({
+				transparent = false, -- Boolean: Sets the background to transparent
+			})
+		end
+	}
+
 
 	-- {
 	-- 	"jesseleite/nvim-noirbuddy",
