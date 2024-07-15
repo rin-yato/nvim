@@ -4,7 +4,7 @@
 
 return {
 
-  "ThePrimeagen/harpoon",
+	"ThePrimeagen/harpoon",
 	branch = "harpoon2",
 	lazy = true,
 	dependencies = {
@@ -23,12 +23,12 @@ return {
 			"<Leader>ha",
 			function()
 				local harpoon = require("harpoon")
-				harpoon:list():append()
+				harpoon:list():add()
 			end,
 			desc = "Harpoon Append File",
 		},
 		{
-			"<Leader>hj",
+			"<Leader>hv",
 			function()
 				local harpoon = require("harpoon")
 				harpoon:list():select(1)
@@ -36,7 +36,7 @@ return {
 			desc = "Harpoon Select File 1",
 		},
 		{
-			"<Leader>hk",
+			"<Leader>hb",
 			function()
 				local harpoon = require("harpoon")
 				harpoon:list():select(2)
@@ -44,20 +44,12 @@ return {
 			desc = "Harpoon Select File 2",
 		},
 		{
-			"<Leader>hl",
+			"<Leader>hn",
 			function()
 				local harpoon = require("harpoon")
 				harpoon:list():select(3)
 			end,
 			desc = "Harpoon Select File 3",
-		},
-		{
-			"<Leader>h;",
-			function()
-				local harpoon = require("harpoon")
-				harpoon:list():select(4)
-			end,
-			desc = "Harpoon Select File 4",
 		},
 	},
 }

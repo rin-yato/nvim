@@ -7,7 +7,11 @@ return {
 			formatters_by_ft = {
 				lau = { "stylua" },
 				javascript = { "biome-check", "prettierd", "prettier" },
-				["*"] = { "codespell" },
+				typescript = { "biome-check", "prettierd", "prettier" },
+				-- typescriptreact = { "biome-check", "prettier" },
+				json = { "biome-check", "prettierd", "prettier" },
+				yaml = { "biome-check", "prettierd", "prettier" },
+				markdown = { "biome-check", "prettierd", "prettier" },
 			},
 
 			format_on_save = {
