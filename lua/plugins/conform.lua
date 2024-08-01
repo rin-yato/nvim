@@ -6,12 +6,11 @@ return {
 		require("conform").setup({
 			formatters_by_ft = {
 				lau = { "stylua" },
-				javascript = { "biome-check", "prettierd", "prettier" },
-				typescript = { "biome-check", "prettierd", "prettier" },
-				-- typescriptreact = { "biome-check", "prettier" },
-				json = { "biome-check", "prettierd", "prettier" },
-				yaml = { "biome-check", "prettierd", "prettier" },
-				markdown = { "biome-check", "prettierd", "prettier" },
+				javascript = { "biome", "prettierd", "prettier" },
+				typescript = { "biome", "prettierd", "prettier" },
+				json = { "biome", "prettierd", "prettier" },
+				yaml = { "biome", "prettierd", "prettier" },
+				markdown = { "biome", "prettierd", "prettier" },
 			},
 
 			format_on_save = {

@@ -23,6 +23,12 @@ return {
 			},
 		})
 
+		vim.api.nvim_set_hl(0, 'TelescopeSelection', { bg = '#FFCFA8', fg = '#000000' })
+		vim.api.nvim_set_hl(0, 'TelescopeMatching', { fg = '#dc8a78' })
+		vim.api.nvim_set_hl(0, 'TelescopePromptBorder', { fg = '#FFCFA8' })
+		vim.api.nvim_set_hl(0, 'TelescopeResultsBorder', { fg = '#FFCFA8' })
+		vim.api.nvim_set_hl(0, 'TelescopePreviewBorder', { fg = '#FFCFA8' })
+
 		telescope.load_extension("fzf")
 
 		-- set keymaps
