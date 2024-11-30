@@ -34,8 +34,9 @@ vim.opt.smartindent = true
 vim.opt.undofile = true
 vim.opt.undodir = vim.fn.stdpath("config") .. "/.undo"
 vim.opt.shada = { "!", "'1000", "<50", "s10", "h" }
-vim.opt.titlestring = "vim (" .. vim.fn.substitute(vim.fn.getcwd(), "^.*/", "", "") .. ")"
+vim.opt.titlestring = "" .. vim.fn.substitute(vim.fn.getcwd(), "^.*/", "", "") .. ""
 vim.opt.exrc = true
 vim.opt.secure = true
 vim.opt.iskeyword:append("-")
 vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+vim.opt.cmdheight = 0

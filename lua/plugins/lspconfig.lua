@@ -91,6 +91,13 @@ return {
 		lspconfig["tailwindcss"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			settings = {
+				tailwindCSS = {
+					experimental = {
+						classRegex = { "%cn\\(\\s*\"([^\"]*)\"\\s*\\)" }
+					}
+				}
+			},
 		})
 
 		-- configure svelte server
@@ -114,7 +121,7 @@ return {
 		lspconfig["emmet_language_server"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
-			filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+			filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte", "markdown" },
 		})
 
 		-- configure lua server (with special settings)
@@ -177,6 +184,17 @@ return {
 		lspconfig.biome.setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			-- make sure it only runs if the root directory contains a biome.json file
+			root_dir = lspconfig.util.root_pattern("biome.json"),
 		})
+
+		-- configure astro server
+		lspconfig.astro.setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
+		-- configure gleam server
+		lspconfig.gleam.setup({})
 	end,
 }
