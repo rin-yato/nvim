@@ -79,6 +79,15 @@ return {
 		lspconfig["tsserver"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			root_dir = lspconfig.util.root_pattern("package.json"),
+			single_file_support = false
+		})
+
+		--configure deno server
+		lspconfig['denols'].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+			root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
 		})
 
 		-- configure css server
@@ -174,12 +183,6 @@ return {
 			on_attach = on_attach,
 		})
 
-		-- configure rust server
-		lspconfig.rust_analyzer.setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
-
 		-- configure biome server
 		lspconfig.biome.setup({
 			capabilities = capabilities,
@@ -193,8 +196,5 @@ return {
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
-
-		-- configure gleam server
-		lspconfig.gleam.setup({})
 	end,
 }

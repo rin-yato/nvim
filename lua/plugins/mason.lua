@@ -34,10 +34,7 @@ return {
 				"tailwindcss",
 				"svelte",
 				"lua_ls",
-				"graphql",
 				"emmet_language_server",
-				"prismals",
-				"pyright",
 			},
 			-- auto-install configured servers (with lspconfig)
 			automatic_installation = true, -- not the same as ensure_installed
@@ -47,7 +44,6 @@ return {
 			ensure_installed = {
 				"prettier", -- prettier formatter
 				"stylua", -- lua formatter
-				"eslint_d", -- js linter
 			},
 		})
 	end,

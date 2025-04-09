@@ -18,7 +18,9 @@ end)
 vim.keymap.set("i", "jj", "<Esc>")
 
 -- Exit terminal mode
-vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
+vim.keymap.set("t", "<Esc>", function()
+	vim.cmd("q")
+end)
 
 -- Edit the alternate / previously edited file
 vim.keymap.set("n", "<Leader>a", "<C-^>")
@@ -74,3 +76,7 @@ vim.keymap.set("n", "L", "<C-w>l")
 
 -- Window and split
 vim.keymap.set("n", "<Leader>wd", "<C-w>c")
+
+
+-- Visual paste without yanking
+vim.keymap.set("x", "p", '"_dP', { noremap = true, silent = true })
